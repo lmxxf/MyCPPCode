@@ -32,7 +32,8 @@ private:
 int main() {
     // 理解“右值引用是左值”
     int &&rvalue_ref = 42; // rvalue_ref 是一个右值引用，绑定到一个右值（42）
-    int a = rvalue_ref; // rvalue_ref 在这里被当作左值，因为它有一个明确的内存位置
+    int &a = rvalue_ref; // rvalue_ref 在这里被当作左值，因为它有一个明确的内存位置
+    cout << a << " " << rvalue_ref << endl;
 
 
     vector<MyClass> v;
