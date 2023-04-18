@@ -72,6 +72,9 @@ void send_sip_request(int sock_fd, const std::string &callee_ip, const std::stri
 
 int main()
 {
+    // 该示例程序创建了一个 TCP socket，监听 5060 端口。当有新的连接时，程序接收来自客户端的 SIP 请求消息，并根据需要回复响应消息。
+    // 在实际应用中，需要根据 SIP 协议规范，解析收到的 SIP 消息，并根据需要发送响应消息。此外，还需要处理 SIP 会话过程中的各种事件，例如会话建立、会话结束等。
+
     int sock_fd = socket(AF_INET, SOCK_STREAM, 0);
     if (sock_fd < 0)
     {

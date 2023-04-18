@@ -69,6 +69,10 @@ void send_sip_request(int sock_fd, const std::string &callee_ip, const std::stri
 
 int main()
 {
+
+    // 这个示例程序演示了如何使用 C++ 编写一个简单的 SIP 协议客户端，向服务器发送 SIP 请求消息，并接收服务器的响应消息。
+    // 请注意，该示例程序中只实现了最基本的 SIP 协议功能，实际的 SIP 应用程序可能需要更复杂的处理逻辑和更多的功能支持。
+
     int sock_fd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock_fd < 0)
     {
