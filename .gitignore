@@ -2,4 +2,6 @@ helloworld/build
 helloworld/CMakeFiles
 SwapValue/build
 SwapValue/CMakeFiles
+soldier_demo/build
+soldier_demo/CMakeFiles
 
