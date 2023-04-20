@@ -29,6 +29,7 @@ public:
                 while (true) {
                     std::function<void()> task;
                     {
+                        // 在离开作用域时自动解锁互斥量
                         std::unique_lock<std::mutex> lock(mutex);
                         condition.wait(lock, [this]() { return !tasks.empty() || stop; });
                         if (stop) break;
@@ -43,6 +44,7 @@ public:
     ~ThreadPool()
     {
         {
+            // 在离开作用域时自动解锁互斥量
             std::unique_lock<std::mutex> lock(mutex);
             stop = true;
         }
@@ -56,6 +58,7 @@ public:
     void enqueue(std::function<void()> task)
     {
         {
+            // 在离开作用域时自动解锁互斥量
             std::unique_lock<std::mutex> lock(mutex);
             tasks.push(task);
         }
